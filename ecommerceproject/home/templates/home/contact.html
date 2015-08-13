@@ -1,0 +1,81 @@
+<link rel="stylesheet" href="front_end.css">
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<div class="container">
+
+<div class="row">
+  <div class="col-md-12">
+    <!-- <small><i></i>Add alerts if form ok... success, else error.</i></small>
+	<div class="alert alert-success"><strong><span class="glyphicon glyphicon-send"></span> Success! Message sent. (If form ok!)</strong></div>	  
+    <div class="alert alert-danger"><span class="glyphicon glyphicon-alert"></span><strong> Error! Please check the inputs. (If form error!)</strong></div>
+  </div> -->
+  <form role="form" action="/sent" method="post" >
+    {% csrf_token %}
+    <div class="col-lg-12">
+      <!-- <div class="well well-sm"><strong><i class="glyphicon glyphicon-ok form-control-feedback"></i> Required Field</strong></div> -->
+      <div class="form-group">
+        <label for="InputName">Your Name</label>
+        <div class="input-group">
+          <input type="text" class="form-control" name="InputName" id="InputName" placeholder="Enter Name" required>
+          <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span></div>
+      </div>
+      <div class="form-group">
+        <label for="InputSubject">Subject</label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="InputEmail" name="InputSubject" placeholder="Subject" required  >
+          <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span></div>
+      </div>
+      <div class="form-group">
+        <label for="InputEmail">Your Email</label>
+        <div class="input-group">
+          <input type="email" class="form-control" id="InputEmail" name="InputEmail" placeholder="Enter Email" required  >
+          <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span></div>
+      </div>
+      <div class="form-group">
+        <label for="InputMessage">Message</label>
+        <div class="input-group"
+>
+          <textarea name="InputMessage" id="InputMessage" class="form-control" rows="5" required></textarea>
+          <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span></div>
+      </div>
+      <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-info pull-right">
+    </div>
+  </form>
+  <hr class="featurette-divider hidden-lg">
+  <div class="col-lg-5 col-md-push-1">
+    <address>
+    <h3>Costa Rica Office</h3>
+    <p class="lead">Offices Casa del Sol No. 9<br>
+50m north of the square<br>
+      Playa Potrero, Santa Cruz<br>
+      Guanacaste Costa Rica<br>
+      Phone: +506-8704-3830<br>
+      </p>
+    </address>
+  </div>
+  <div class="col-lg-5 col-md-push-1">
+    <address>
+    <h3>US Office</h3>
+    <p class="lead">3310 Crosspark Lane<br>
+      Houston<br>
+      TX 77007<br>
+      Phone: +1-832-548-4493<br>
+      </p>
+    </address>
+  </div>
+</div>
+
+</div>
+<div class="col-lg-10 col-md-push-1">
+<iframe style="border: 0;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15694.030320936925!2d-85.7727326!3d10.460594000000018!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f9e2583c3ff2c45%3A0x29d4ba0dd306793d!2sAbriendo+Mentes%2C+Potrero%2C+Guanacaste%2C+Costa+Rica!5e0!3m2!1sen!2sus!4v1390169278531" width="100%" height="425" frameborder="0"></iframe>
+<br>
+<br>
+</div>
