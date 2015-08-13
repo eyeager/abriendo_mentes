@@ -75,6 +75,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'ecommerceproject.wsgi.application'
 
+#User auth
+
+LOGIN_REDIRECT_URL = '/users/login/success/'
+
+LOGIN_URL = '/users/login/'
+
+LOGOUT_URL = '/users/logout/'
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases

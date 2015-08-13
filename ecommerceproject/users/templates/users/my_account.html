@@ -1,0 +1,15 @@
+{% extends 'ecommerceproject/base.html' %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static "main.css" %}">
+
+{% block content %}
+<h4>
+Name: {{current_user.first_name}} {{current_user.last_name}}<br>
+Username: {{current_user.username}}<br>
+Email address: {{current_user.email}}<br>
+</h4>
+<h2>Order History</h2>
+{% for orderproduct in orderproducts %}
+    <h3>Order #{{orderproduct.order.id}} ({{orderproduct.order.get_status}}): {{orderproduct.product.name}}, {{orderproduct.quantity}} items</h3>
+{% endfor %}
+{% endblock %}

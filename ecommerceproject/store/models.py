@@ -12,7 +12,7 @@ class Order(models.Model):
 class Product(models.Model):
     name = models.CharField(max_length = 128)
     price = models.IntegerField()
-    image = models.TextField()
+    image = models.TextField(null = True)
     description = models.TextField()
     orderproducts = models.ManyToManyField(Order, through = "OrderProduct")
 

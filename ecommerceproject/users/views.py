@@ -3,6 +3,8 @@ from django.contrib.auth import authenticate
 from django.contrib.auth import login as auth_login
 from django.contrib.auth import logout as auth_logout
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
+from store.models import *
 
 # Create your views here.
 def index(request):
@@ -41,3 +43,13 @@ def signup(request):
 def signup_success(request):
     new_user = User.objects.create_user(username = request.POST.get('username'), password = request.POST.get('password'), email = request.POST.get('email'), first_name = request.POST.get('firstname'), last_name = request.POST.get('lastname'))
     return render(request, 'users/signup_success.html', {'new_user': new_user})
+
+@login_required
+def my_account(request):
+    current_user = request.user
+    orders = Order.objects.filter(username = current_user.username)
+    orderproducts = []
+    for order in orders:
+        orderproducts += OrderProduct.objects.filter(order = order)
+    print orderproducts
+    return render(request, 'users/my_account.html', {'orderproducts': orderproducts, 'current_user': current_user})
