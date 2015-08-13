@@ -28,10 +28,11 @@
 </div>
 
 {% for product in products %}
+
     <a href='/store/{{product.id}}'>
         <div class='product-box'>
             <img src='{% static product.image %}' class='product-picture'>
-            <span class='product-info'>{{product.name}}: ${{product.dollars}}</span>
+            <span class='product-info'>{{product.name}}: ${{product.dollars}} Type:{{product.product_type}} Quantity:{{product.quantity}}</span>
         </div>
     </a>
 {% endfor %}
