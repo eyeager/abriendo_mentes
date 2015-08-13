@@ -9,7 +9,7 @@
 {% endfor %}
 <h2>Products</h2>
 {% for product in products %}
-    <h3>Product #{{product.id}} ({{product.name}}): ${{product.dollars}}</h3>
+    <h3>Product #{{product.id}} ({{product.name}}): ${{product.dollars}} Type:{{product.product_type}} Quantity:{{product.quantity}}</h3>
 {% endfor %}
 <h2>OrderProducts</h2>
 {% for orderproduct in orderproducts %}

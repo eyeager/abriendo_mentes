@@ -14,7 +14,7 @@ def index(request):
         jsondata = serializers.serialize('json', Product.objects.all())
         return HttpResponse(jsondata, content_type='application/json')
     
-    products = Product.objects.all()
+    products = Product.objects.filter(quantity__gt=0)
     qparams = ''
 
     filtering = request.GET.get('filter')
