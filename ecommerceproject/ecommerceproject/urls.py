@@ -23,4 +23,6 @@ urlpatterns = [
     url(r'^$', views.index, name = 'index'),
     url(r'^store/', include('store.urls')),
     url(r'^users/', include('users.urls')),
+    url(r'^contact', views.contact, name = 'contact'),
+    url(r'^sent', views.sent, name = 'sent'),
 ]
