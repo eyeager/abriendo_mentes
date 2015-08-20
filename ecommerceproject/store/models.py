@@ -18,6 +18,9 @@ class Product(models.Model):
     quantity = models.IntegerField() 
     orderproducts = models.ManyToManyField(Order, through = "OrderProduct")
 
+    def __unicode__(self):
+        return self.name
+
     def dollars(self):
         if self.price <= 99999:
             return "%.2f" % (self.price / 100.0)
