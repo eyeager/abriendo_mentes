@@ -15,6 +15,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('status', models.IntegerField()),
+                ('username', models.CharField(max_length=128)),
             ],
         ),
         migrations.CreateModel(
@@ -31,6 +32,10 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('name', models.CharField(max_length=128)),
                 ('price', models.IntegerField()),
+                ('image', models.TextField(null=True)),
+                ('description', models.TextField()),
+                ('product_type', models.TextField()),
+                ('quantity', models.IntegerField()),
                 ('orderproducts', models.ManyToManyField(to='store.Order', through='store.OrderProduct')),
             ],
         ),
