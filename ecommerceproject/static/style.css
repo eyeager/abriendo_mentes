@@ -31,20 +31,37 @@ a {
    
 }
 a:hover {
-    color:#F26925;
+    color:#f0f0f0;
 }
 a: visited {
   color:#EC1A5B;
 }
+
+/**************************
+* LOGO
+***************************/
+
+.logo {
+  margin: 1rem 0px;
+
+}
+
 /**************************
 * NAV
 ***************************/
-
-.navbar-default .navbar-collapse, .navbar-default .navbar-form  {
-  color: #EE4723;
+.navbar-brand{
+  font-family: 'Josefin Slab', serif;
+  font-size: 25px;
 }
 
-.navbar-nav>li>a {
-color: #EE4723;
-
+.nav navbar-nav navbar-right {
+  font-family: 'Josefin Slab', serif;
 }
+
+
+.navbar-default {
+  border-color: #EE4723;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+  color:#F26925;
