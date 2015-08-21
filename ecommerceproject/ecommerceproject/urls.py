@@ -19,10 +19,7 @@ from . import views
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^home/', include('home.urls')),
-    url(r'^$', views.index, name = 'index'),
     url(r'^store/', include('store.urls')),
     url(r'^users/', include('users.urls')),
-    url(r'^contact', views.contact, name = 'contact'),
-    url(r'^sent', views.sent, name = 'sent'),
+    url(r'^/?', include('home.urls')),
 ]
